@@ -1,12 +1,13 @@
 import { TableCard } from "@/components/dashboard/table-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
+import { Component } from "./chart";
 
 export function TableGrid() {
   return (
     <>
-      <div className="grid grid-flow-col grid-3 gap-4 mt-9 ml">
-        <Card className="ml-3">
+      <div className=" w-full min-w-full grid grid-flow-col grid-3 gap-4 mt-9 ml">
+        <Card className="ml-3 pl-3">
           <CardTitle>Automation Rules</CardTitle>
           <TableCard props={true}></TableCard>
           <CardFooter className="flex flex-col gap-2">
@@ -24,13 +25,17 @@ export function TableGrid() {
             </Button>
           </CardFooter>
         </Card>
-        <Card>
-          <CardTitle>Automation Rules</CardTitle>
-          <TableCard props={false}></TableCard>
+        <Card className="gap-2 pl-3">
+          <CardTitle>Energy UsageOver Time</CardTitle>
+          <Component />
+          <CardContent className="py-0 gap-0">Total Energy Used Today: 3.2 kWh</CardContent>
+          <CardFooter className="text-xs py-0 text-slate-500 gap-0 ">
+            Highest Consuming Device: HVAC System (1.5 kWh)
+          </CardFooter>
         </Card>
-        <Card className="mr-3">
-          <CardTitle>Automation Rules</CardTitle>
-          <TableCard props={true}></TableCard>
+        <Card className="mr-3 pl-3 ">
+          <CardTitle className="ml-3 ">Security Alerts</CardTitle>
+          <TableCard  props={true}></TableCard>
           <CardFooter className="flex flex-col gap-2">
             <Button
               variant={"outline"}

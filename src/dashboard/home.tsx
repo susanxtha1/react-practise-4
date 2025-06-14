@@ -12,10 +12,7 @@ export function Home() {
         <div className="mt-6">
           <InfoCard />
           <TableGrid/>
-          <RoomDetail/>
-          
-
-           
+          <RoomDetail/>        
         </div>
       </div>
     </>

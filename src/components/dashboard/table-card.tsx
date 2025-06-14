@@ -54,11 +54,11 @@ export function TableCard({ props }) {
 
   return (
     <>
-      <Table>
+      <Table className="">
         <TableHeader>
           <TableRow>
             {keys.map((item, index) => (
-              <TableHead key={index} className="w-[100px]">
+              <TableHead key={index} className="w-[100px] capitalize text-slate-500 font-medium">
                 {item}
               </TableHead>
             ))}
