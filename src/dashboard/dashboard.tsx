@@ -11,8 +11,7 @@ export default function Dashboard() {
       <SidebarProvider   >
       <SidebarTrigger  className="mt-4"/>
         <AppSidebar  />
-        
-        
+      
        
         <Outlet />
       </SidebarProvider>

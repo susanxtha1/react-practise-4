@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+
 export interface AuthContextType {
   isLoggedIn: boolean;
   currentUser: any;
@@ -29,8 +30,8 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const login = (email, password) => {
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+  const login = (email: string, password: string) => {
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
 
     const user = users.find(
       (u) => u.email === email && u.password === password
@@ -64,7 +65,7 @@ export const AuthProvider = ({ children }) => {
       return false;
     }
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
 
     if (users.some((user) => user.email === email)) {
       alert("User already exists.");
@@ -80,7 +81,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, login, logout, loading, currentUser }}
+      value={{ isLoggedIn, login, logout, loading, currentUser, signUp }}
     >
       {children}
     </AuthContext.Provider>

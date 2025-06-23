@@ -1,15 +1,15 @@
-import  { useContext } from "react";
-import { AuthContext } from "./AuthContext";
+import React, { useContext } from "react";
+import { AuthContext, type AuthContextType } from "./authcontext";
 
-const Dashboard = () => {
-  const { logout, currentUser } = useContext(AuthContext);
+const Dash: React.FC = () => {
+  const context = useContext(AuthContext) as AuthContextType;
 
   return (
     <div style={{ padding: 20 }}>
-      <h2>Welcome, {currentUser?.email}</h2>
-      <button onClick={logout}>Logout</button>
+      <h2>Welcome, {context.currentUser?.email}</h2>
+      <button onClick={context.logout}>Logout</button>
     </div>
   );
 };
 
-export default Dashboard;
+export default Dash;
